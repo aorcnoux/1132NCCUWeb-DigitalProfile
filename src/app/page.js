@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import aprilImg from "@/../public/april.jpg";
-import HeartImg from "@/../public/heart.png"
+import HeartImg from "@/../public/ugly.png"
 import { useState } from "react";
 
 

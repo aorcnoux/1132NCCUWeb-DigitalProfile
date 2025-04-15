@@ -19,11 +19,11 @@ export default function CatePainting() {
       
 
       <div className="flex flex-col w-full">
-        <h1 className="text-2xl font-bold">
-          繪畫作品
+        <h1 className="text-4xl font-bold">
+          Projects
         </h1>
         <h3 >
-          我精彩的繪圖作品，我擅長用水彩勾勒出細膩的線條，並且用色調和來表現出不同的情感。
+          擅長用水彩勾勒出細膩的線條，並且用色調和來表現出不同的情感
         </h3>
       </div>
 
