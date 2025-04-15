@@ -1,5 +1,5 @@
 import Image from "next/image";
-import AvatarImg from "@/../public/avatar.jpg"; 
+import aprilImg from "@/../public/april.jpg"; 
 
 export default function Home() {
   return (
@@ -12,8 +12,8 @@ export default function Home() {
         <div></div>
 
         <Image 
-          src={AvatarImg}
-          alt="Avatar"
+          src={aprilImg}
+          alt="april"
           width={80}
           height={80}
           className="rounded-full"

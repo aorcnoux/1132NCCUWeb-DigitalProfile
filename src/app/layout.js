@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
-import AvatarImg from "@/../public/Avatar.png";
+import aprilImg from "@/../public/april.jpg";
 import Link from "next/link";
 import LinkImg1 from "@/image/帝寶.png"
 
@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "古健樺的數位履歷",
+  title: "周杰穎的數位履歷",
   description: "瀏覽人次達 1000 萬，好評熱賣中",
 
 };
@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
           <div className=" min-w-[320px] w-full sm:w-[320px] h-full rounded-2xl bg-white flex 
           justify-start items-center flex-col p-[30px] pt-[80px] overflow-y-auto overflow-x-hidden">
             
-            <Image src={AvatarImg} alt="Avatar" className="w-[80px] h-[80px] rounded-full" />
+            <Image src={aprilImg} alt="april" className="w-[80px] h-[80px] rounded-full" />
         
             <h1 className="mt-2">古健樺</h1>
             <p className="max-w-[380px] text-center">

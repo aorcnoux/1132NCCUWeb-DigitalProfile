@@ -1,5 +1,5 @@
 import Image from "next/image";
-import AvatarImg from "@/../public/Avatar.png";
+import aprilImg from "@/../public/april.jpg";
 import Painting1 from "@/image/1.png"
 import Painting2 from "@/image/2.png"
 import Painting3 from "@/image/3.png"

@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image";
-import AvatarImg from "@/../public/Avatar.png";
+import aprilImg from "@/../public/april.jpg";
 import HeartImg from "@/../public/heart.png"
 import { useState } from "react";
 
