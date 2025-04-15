@@ -38,26 +38,23 @@ export default function RootLayout({ children }) {
             
             <Image src={aprilImg} alt="april" className="w-[80px] h-[80px] rounded-full" />
         
-            <h1 className="mt-2">古健樺</h1>
+            <h1 className="mt-2">周杰穎</h1>
             <p className="max-w-[380px] text-center">
               我是一個熱愛學習的學生，喜歡研究各種技術和工具，希望能夠不斷提升自己的能力。
             </p>
             
             {/* 社群連結 */}
             <div className="flex gap-2 my-5">
-              <a href="https://google.com" target="_blank">
+              <a href="https://www.instagram.com/aorcnoux?igsh=ZmVteHduY29pZXFw&utm_source=qr" target="_blank">
                 <div className="bg-gray-300 w-[40px] h-[40px] rounded-full"></div>
               </a>
-              <a href="https://google.com" target="_blank">
+              <a href="https://www.linkedin.com/in/chiehyingchou/" target="_blank">
                 <div className="bg-gray-300 w-[40px] h-[40px] rounded-full"></div>
               </a>
-              <a href="https://google.com" target="_blank">
+              <a href="https://www.facebook.com/profile.php?id=100072377231574&locale=zh_TW" target="_blank">
                 <div className="bg-gray-300 w-[40px] h-[40px] rounded-full"></div>
               </a>
-              <a href="https://google.com" target="_blank">
-                <div className="bg-gray-300 w-[40px] h-[40px] rounded-full"></div>
-              </a>
-              <a href="https://google.com" target="_blank">
+              <a href="https://www.instagram.com/taylorswift?igsh=MXFxdnM3M3N0cTg2aQ==" target="_blank">
                 <div className="bg-gray-300 w-[40px] h-[40px] rounded-full"></div>
               </a>
             </div>
