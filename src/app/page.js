@@ -22,7 +22,7 @@ export default function Home() {
       <div className="cursor-pointer flex flex-col justify-center items-center"
         onClick={addHeart}
       >
-        <Image src={HeartImg} className="w-[68px]" alt="heart" />
+        <Image src={HeartImg} className="w-[300px]" alt="heart" />
         <div className=" text-2xl "> { heart } </div>
       </div>
       
