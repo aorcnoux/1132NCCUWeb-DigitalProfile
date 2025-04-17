@@ -90,7 +90,6 @@ export default function About() {
   );
 }
 
-// 技能條元件
 function SkillBar({ name, level }) {
   return (
     <div>
