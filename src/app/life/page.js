@@ -10,42 +10,39 @@ import Painting6 from "@/image/7.png";
 
 export default function CatePainting() {
   return (
-    <div className="w-full min-h-screen flex justify-center items-start bg-[#F9FAFB] py-10 px-4">
-      <div className="w-full max-w-6xl bg-white rounded-2xl py-10 px-4 sm:px-6 md:px-10 relative overflow-hidden">
-        
-        {/* ❤️ 飄動愛心圖（右上角） */}
-        <div className="absolute top-4 right-4 sm:right-10 z-10 animate-float">
-          <Image
-            src="/heartt.jpg"
-            alt="Heart"
-            width={80}
-            height={80}
-            className="w-[60px] sm:w-[80px] md:w-[100px]"
+    <div className="w-full h-full bg-white flex flex-col items-center justify-start rounded-2xl p-4 sm:p-6 md:p-8 overflow-y-auto max-w-[1440px] mx-auto">
+      {/* 飄動愛心圖（右上角） */}
+      <div className="absolute top-12 right-10 sm:right-10 z-10 animate-float">
+        <Image
+          src="/heartt.jpg"
+          alt="Heart"
+          width={70}
+          height={70}
+          className="w-[60px] sm:w-[80px] md:w-[100px]"
+        />
+      </div>
+
+      {/* 標題區塊 */}
+      <div className="flex flex-col w-full text-center mb-6 px-2">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">Life</h1>
+        <p className="text-gray-600 text-sm sm:text-base">
+          💡 Life tip: When nothing goes right... go to sleep
+        </p>
+      </div>
+
+      {/* 圖片區塊（RWD） */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-6xl px-2">
+        {[Painting1, Painting2, Painting3, Painting4, Painting5, Painting6].map((painting, idx) => (
+          <div
+            key={idx}
+            className="rounded-2xl overflow-hidden aspect-[4/3] w-full shadow-sm transition-transform transform duration-300 hover:scale-105 hover:shadow-lg hover:brightness-110"
+            style={{
+              backgroundImage: `url(${painting.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
           />
-        </div>
-
-        {/* 標題區塊 */}
-        <div className="flex flex-col w-full text-center mb-6">
-          <h1 className="text-3xl sm:text-4xl font-bold mb-2">Life</h1>
-          <h3 className="text-gray-600 text-sm sm:text-base">
-            💡 Life tip: When nothing goes right... go to sleep
-          </h3>
-        </div>
-
-        {/* 圖片區塊（保證圖片不超框） */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {[Painting1, Painting2, Painting3, Painting4, Painting5, Painting6].map((painting, idx) => (
-            <div
-              key={idx}
-              className="rounded-2xl shadow-sm overflow-hidden aspect-[4/3] w-full transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl hover:brightness-110"
-              style={{
-                backgroundImage: `url(${painting.src})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            />
-          ))}
-        </div>
+        ))}
       </div>
     </div>
   );

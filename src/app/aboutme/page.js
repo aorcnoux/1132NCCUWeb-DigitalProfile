@@ -24,7 +24,7 @@ export default function About() {
       {/* 主要內容容器 */}
       <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 items-center sm:items-start w-full max-w-5xl">
         {/* 左側圖片 */}
-        <div className="w-full sm:w-[400px] flex-shrink-0">
+        <div className="w-full sm:w-[400px] flex-shrink-0 mt-6 sm:mt-6">
           <Image
             src={aprilImg}
             alt="About photo"
@@ -33,7 +33,7 @@ export default function About() {
         </div>
 
         {/* 右側內容 */}
-        <div className="flex flex-col text-gray-800 w-full px-1">
+        <div className="flex flex-col text-gray-800 w-full px-1 pt-4 sm:pt-1">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-4 mb-10">
             Chieh Ying (April) Chou
           </h1>
@@ -69,26 +69,34 @@ export default function About() {
           </div>
         </div>
       </div>
+{/* ❤️ 愛心互動圖與計數器（固定在右上角，隨裝置尺寸自適應） */}
+<div className="absolute top-50 right-2 sm:right-10 z-10">
+  <div
+    className="cursor-pointer hover:scale-105 transition-transform duration-200 flex flex-col items-center"
+    onClick={addHeart}
+  >
+    <Image
+      src={HeartImg}
+      alt="heart"
+      className="w-[60px] sm:w-[80px] md:w-[100px]"
+    />
+    <div className="text-xs sm:text-sm md:text-base font-semibold mt-1 text-center">
+      {heart}
+    </div>
+  </div>
 
-      {/* ❤️ 愛心互動圖＆計數 */}
-      <div className="absolute right-4 sm:right-6 md:right-8 top-1/2 -translate-y-1/2 flex flex-col items-center z-10">
-        <div
-          className="cursor-pointer hover:scale-105 transition-transform duration-200"
-          onClick={addHeart}
-        >
-          <Image src={HeartImg} alt="heart" className="w-[120px] sm:w-[150px]" />
-          <div className="text-sm sm:text-base font-semibold mt-2 text-center">{heart}</div>
-        </div>
+  {/* 飄出的表情符號 */}
+  {floatHearts.map((id) => (
+    <span
+      key={id}
+      className="absolute text-pink-500 text-3xl animate-float-heart -top-10 left-1/2 -translate-x-1/2"
+    >
+      🤡
+    </span>
+  ))}
+</div>
 
-        {floatHearts.map((id) => (
-          <span
-            key={id}
-            className="absolute text-pink-500 text-3xl animate-float-heart -top-10"
-          >
-            🤡
-          </span>
-        ))}
-      </div>
+
     </div>
   );
 }
