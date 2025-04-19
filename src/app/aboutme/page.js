@@ -10,8 +10,7 @@ export default function About() {
   const [floatHearts, setFloatHearts] = useState([]);
 
   const addHeart = () => {
-    setHeart(heart + 1);
-
+    setHeart((prev) => prev + 1);
     const id = Date.now();
     setFloatHearts((prev) => [...prev, id]);
 
@@ -21,11 +20,11 @@ export default function About() {
   };
 
   return (
-    <div className="w-full h-full bg-white flex justify-center items-center rounded-2xl p-8 relative">
-      {/* 左右區塊 */}
-      <div className="flex flex-col sm:flex-row gap-10 items-center sm:items-start max-w-5xl w-full">
-        {/* 左側照片 */}
-        <div className="w-full sm:w-[400px] flex-shrink-0 mt-4 sm:mt-5">
+    <div className="w-full h-full bg-white flex flex-col items-center justify-start rounded-2xl p-4 sm:p-6 md:p-8 overflow-y-auto max-w-[1440px] mx-auto relative">
+      {/* 主要內容容器 */}
+      <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 items-center sm:items-start w-full max-w-5xl">
+        {/* 左側圖片 */}
+        <div className="w-full sm:w-[400px] flex-shrink-0">
           <Image
             src={aprilImg}
             alt="About photo"
@@ -33,54 +32,58 @@ export default function About() {
           />
         </div>
 
-        {/* 右側文字區塊 */}
-        <div className="flex flex-col text-gray-800 self-start text-left max-w-xl pl-4 space-y-10 animate-fade-up">
-          <h1 className="text-4xl font-bold mt-4">Cheih Ying (April) Chou</h1>
+        {/* 右側內容 */}
+        <div className="flex flex-col text-gray-800 w-full px-1">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-4 mb-10">
+            Chieh Ying (April) Chou
+          </h1>
 
-          <div className="space-y-2">
-            <h2 className="font-semibold text-xl">🫧 Study at:</h2>
-            <p>National Chengchi University</p>
-            <p>B.A. in Arabic Language and Culture</p>
-            <p>B.S. in Digital Content & Technologies</p>
+          {/* 就學資訊 */}
+          <div className="mb-8">
+            <h2 className="font-semibold text-lg sm:text-xl mb-2">🫧 Study at:</h2>
+            <p className="text-sm sm:text-base">National Chengchi University</p>
+            <p className="text-sm sm:text-base">B.A. in Arabic Language and Culture</p>
+            <p className="text-sm sm:text-base">B.S. in Digital Content & Technologies</p>
           </div>
 
-          <div className="space-y-2">
-            <h2 className="font-semibold text-xl">🫧 Skill:</h2>
-            <div className="space-y-1">
+          {/* 技能條 */}
+          <div className="mb-8">
+            <h2 className="font-semibold text-lg sm:text-xl mb-2">🫧 Skill:</h2>
+            <div className="space-y-2">
               <SkillBar name="Creativity" level="w-2/3" />
               <SkillBar name="Leadership" level="w-6/7" />
               <SkillBar name="Communication" level="w-5/6" />
             </div>
           </div>
 
-          <div className="space-y-2">
-            <h2 className="font-semibold text-xl">🫧 About me:</h2>
-            <p className="leading-loose">
-              Hi, I’m Chieh Ying (April) Chou. I’m a senior at National Chengchi
-              University, double majoring in Arabic and Digital Content &
-              Technologies.
-              Passionate about marketing, UI/UX design, digital media, and
-              interactive design, I have experience in content creation,
-              branding, and user engagement.
+          {/* 自我介紹 */}
+          <div>
+            <h2 className="font-semibold text-lg sm:text-xl mb-2">🫧 About me:</h2>
+            <p className="leading-relaxed text-sm sm:text-base">
+              Hi, I’m Chieh Ying (April) Chou. I’m a senior at National Chengchi University,
+              double majoring in Arabic and Digital Content & Technologies.
+              <br />
+              Passionate about marketing, UI/UX design, digital media, and interactive design, I
+              have experience in content creation, branding, and user engagement.
             </p>
           </div>
         </div>
       </div>
 
-      {/* ❤️ 愛心互動圖＆計數（固定右側中間） */}
-      <div className="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col items-center z-10">
+      {/* ❤️ 愛心互動圖＆計數 */}
+      <div className="absolute right-4 sm:right-6 md:right-8 top-1/2 -translate-y-1/2 flex flex-col items-center z-10">
         <div
-          className="cursor-pointer flex flex-col justify-center items-center hover:scale-105 transition-transform duration-200"
+          className="cursor-pointer hover:scale-105 transition-transform duration-200"
           onClick={addHeart}
         >
-          <Image src={HeartImg} alt="heart" className="w-[220px]" />
-          <div className="text-xl mt-2 font-semibold">{heart}</div>
+          <Image src={HeartImg} alt="heart" className="w-[120px] sm:w-[150px]" />
+          <div className="text-sm sm:text-base font-semibold mt-2 text-center">{heart}</div>
         </div>
 
         {floatHearts.map((id) => (
           <span
             key={id}
-            className="absolute text-pink-500 text-4xl animate-float-heart -top-10"
+            className="absolute text-pink-500 text-3xl animate-float-heart -top-10"
           >
             🤡
           </span>
@@ -95,7 +98,7 @@ function SkillBar({ name, level }) {
   return (
     <div>
       <p className="text-sm">{name}</p>
-      <div className="w-48 h-2 bg-gray-200 rounded-full">
+      <div className="w-full max-w-xs h-2 bg-gray-200 rounded-full">
         <div className={`h-2 bg-gray-500 rounded-full ${level}`}></div>
       </div>
     </div>
