@@ -1,9 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import aprilImg from "@/../public/april.jpg";
 import HeartImg from "@/../public/ugly.png";
-import { useState } from "react";
 
 export default function About() {
   const [heart, setHeart] = useState(0);
@@ -12,10 +12,9 @@ export default function About() {
   const addHeart = () => {
     setHeart(heart + 1);
 
-    const id = Date.now(); // 每個浮動愛心唯一 ID
+    const id = Date.now();
     setFloatHearts((prev) => [...prev, id]);
 
-    // 一段時間後自動移除這顆浮動愛心
     setTimeout(() => {
       setFloatHearts((prev) => prev.filter((h) => h !== id));
     }, 1000);
@@ -57,9 +56,12 @@ export default function About() {
           <div className="space-y-2">
             <h2 className="font-semibold text-xl">🫧 About me:</h2>
             <p className="leading-loose">
-              Hi, I’m Chieh Ying (April) Chou. I’m a senior at National Chengchi University, double majoring in Arabic and Digital Content & Technologies.
-              
-              Passionate about marketing, UI/UX design, digital media, and interactive design, I have experience in content creation, branding, and user engagement.
+              Hi, I’m Chieh Ying (April) Chou. I’m a senior at National Chengchi
+              University, double majoring in Arabic and Digital Content &
+              Technologies.
+              Passionate about marketing, UI/UX design, digital media, and
+              interactive design, I have experience in content creation,
+              branding, and user engagement.
             </p>
           </div>
         </div>
@@ -72,24 +74,23 @@ export default function About() {
           onClick={addHeart}
         >
           <Image src={HeartImg} alt="heart" className="w-[220px]" />
-          <div className="text-xl mt-2 font-semibold">{heart} </div>
+          <div className="text-xl mt-2 font-semibold">{heart}</div>
         </div>
 
-        {/* 飄出的愛心 */}
         {floatHearts.map((id) => (
-         <span
-         key={id}
-         className="absolute text-pink-500 text-4xl animate-float-heart -top-10"
-       >
-         🤡
-       </span>
-       
+          <span
+            key={id}
+            className="absolute text-pink-500 text-4xl animate-float-heart -top-10"
+          >
+            🤡
+          </span>
         ))}
       </div>
     </div>
   );
 }
 
+// 技能條元件
 function SkillBar({ name, level }) {
   return (
     <div>
