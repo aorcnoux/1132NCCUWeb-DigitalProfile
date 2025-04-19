@@ -78,7 +78,7 @@ export default function About() {
     <Image
       src={HeartImg}
       alt="heart"
-      className="w-[60px] sm:w-[80px] md:w-[100px]"
+      className="w-[60px] sm:w-[80px] md:w-[200px]"
     />
     <div className="text-xs sm:text-sm md:text-base font-semibold mt-1 text-center">
       {heart}
